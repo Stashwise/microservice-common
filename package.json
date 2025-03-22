@@ -11,21 +11,17 @@
   ],
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "prepublishOnly": "yarn build",
-    "dev": "nodemon --exec ts-node ./src/index.ts --mode development",
-    "lint": "eslint \"{src,apps,libs}/**/*.ts\" --fix",
-    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
-    "test": "cross-env STASHWISE_NODE_ENV=test nyc --reporter=lcov --reporter=text --reporter=text-summary mocha --require ts-node/register --file ./testSetup.ts --recursive --timeout=150000 tests/index.ts --exit"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "prepublishOnly": "yarn build"
   },
   "files": [
     "dist"
   ],
   "keywords": [
     "microservices",
-    "utilities"
+    "utilities",
+    "authentication",
+    "validation",
+    "logging"
   ],
   "author": "Stashwise Technologies",
   "devDependencies": {

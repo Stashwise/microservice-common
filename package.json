@@ -1,4 +1,53 @@
 {
-  "name": "microservice-common",
-  "packageManager": "yarn@4.2.2"
+  "name": "@stashwise/microservice-common",
+  "version": "0.1.0",
+  "description": "Common utilities for microservices",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "prepublishOnly": "yarn build",
+    "dev": "nodemon --exec ts-node ./src/index.ts --mode development",
+    "lint": "eslint \"{src,apps,libs}/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "test": "cross-env STASHWISE_NODE_ENV=test nyc --reporter=lcov --reporter=text --reporter=text-summary mocha --require ts-node/register --file ./testSetup.ts --recursive --timeout=150000 tests/index.ts --exit"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "microservices",
+    "utilities"
+  ],
+  "author": "Stashwise Technologies",
+  "devDependencies": {
+    "@types/bcrypt": "^5",
+    "@types/crypto-js": "^4",
+    "@types/node": "^22.13.11",
+    "typescript": "^5.8.2"
+  },
+  "packageManager": "yarn@4.2.2",
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "bcrypt": "^5.1.1",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
+    "express": "^4.21.2",
+    "http-status-codes": "^2.3.0",
+    "joi": "^17.13.3",
+    "ts-node": "^10.9.2",
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
 }

@@ -3,8 +3,8 @@ import * as crypto from 'crypto';
 import { v4 as uuidv4 } from 'uuid';
 import { AES, enc, SHA512 } from "crypto-js";
 import { addHours, addMinutes } from 'date-fns';
-import { AuthSigning, IHash } from "@/interface";
-import { UnAuthorizedException } from "@/errors";
+import { AuthSigning, IHash } from "../interface";
+import { UnAuthorizedException } from "../errors";
 
 export interface HashingService {
     generateHashString(data: string, salt?: string): Promise<string>;

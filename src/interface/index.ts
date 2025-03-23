@@ -1,3 +1,5 @@
+export * from "./user-type"
+
 interface DefaultAttributes {
     _id: string;
     createdAt: string;

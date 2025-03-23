@@ -26,9 +26,6 @@
       "resolveJsonModule": true,
       "baseUrl": ".",
       "typeRoots": ["./request.d.ts", "./node_modules/@types"],
-      "paths": {
-        "@/*": ["src/*"]
-      }
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "dist", "**/*.test.ts"]

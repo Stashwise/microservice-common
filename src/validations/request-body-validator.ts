@@ -29,4 +29,4 @@ export const RequestBodyValidatorMiddleware =
       statusCode: StatusCodes.UNPROCESSABLE_ENTITY,
       message: message.replace(/"/gi, ''),
     });
-};
+  };
